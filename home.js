@@ -136,11 +136,18 @@ const deals = [
 //CODE HERE
 
 
- let newDiscount = arr[0]
- console.log(newDiscount[title])
+//  let newDiscount = deals[0]
+//  console.log(newDiscount[title])
 
- newDiscount[title] = '10% off'
- console.log(newDiscount[title])
+//  newDiscount[title] = '10% off'
+//  console.log(newDiscount[title])
+
+
+// Redo: 
+
+deals[0].title = deals[0].title.replace('15' , '10')
+    // console.log(deals)
+
 
 
 
@@ -160,4 +167,12 @@ const deals = [
 */
 
 //CODE HERE
+
+
+// Redo:
+
+
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
+    console.log(deals)
+
 
