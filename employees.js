@@ -21,6 +21,20 @@
 
 //CODE HERE
 
+//Redo below
+
+class Employee {
+    constructor(name, shifts){
+        this.name = name;
+        this.shifts = shifts
+    }
+
+    getSchedule(){
+        console.log(`${this.name} works on ${this.shifts}`)
+    }
+
+}
+
 
 
 /*
@@ -33,15 +47,15 @@
     shifts: weekday mornings, weekday afternoons
 */
 
-//CODE HERE
+const empOne = new Employee('Jess', ['weekday mornings', 'weekday afternoons'])
+
 
 /*
     Call the `getSchedule` method on the
     `empOne` object.
 */
 
-//CODE HERE
-
+empOne.getSchedule()
 
 /*
     Make a copy of the empOne object
@@ -54,8 +68,10 @@
     spread operator or reassign it using 
     dot or bracket notation.
 */
+//Redo below
+ const empTwo = {...empOne, name: 'Nick'}
 
-//CODE HERE
+empTwo.name = 'Nick'
 
 
 
@@ -84,6 +100,19 @@
 
 //CODE HERE
 
+// Redo below
+
+class Manager extends Employee {
+    constructor(name,shifts,employees){
+        super(name, shifts)
+        this.employees = employees
+    }
+
+    getEmployees(){
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+
+}
 
 
 /*
@@ -97,7 +126,7 @@
     employees: Cece and Schmidt
 */
 
-//CODE HERE
+const manager = new Manager('Winston' , ['weekday mornings', 'weekday afternoons'], ['Cece', 'Scott'])
 
 
 /*
@@ -105,7 +134,7 @@
     `manager` object.  
 */
 
-//CODE HERE
+manager.getEmployees()
 
 /*
     Call the `addEmployee` method on the 
@@ -113,7 +142,7 @@
     'Coach' or whatever name you'd like.
 */
 
-//CODE HERE 
+manager.addEmployee('Coach')
 
 /*
     Call the `getEmployees` method on the
@@ -121,4 +150,4 @@
     that an employee was added.
 */
 
-//CODE HERE
+manager.getEmployees()
