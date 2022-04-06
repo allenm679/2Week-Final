@@ -1,12 +1,6 @@
 ///////////////////////////////////////////////
 ///////////////////CART.JS/////////////////////
 ///////////////////////////////////////////////
-/*
-    In this file, you'll be writing code to
-    calculate order totals. You'll also be 
-    creating customer objects.  
-*/
-
 
 //////////////////PROBLEM 1////////////////////
 /*  
@@ -35,9 +29,20 @@ const cart = [
 
 //CODE HERE
 
- const summedPrice = cart.reduce()
+//  const summedPrice = cart.reduce()
 
+ //redo below
 
+ const summedPrice = cart.reduce((acc, ord ) => {
+    return + acc + ord.price
+ } , 0 )
+
+ const greeter = (cb, greeting) => {
+     return cb(greeting)
+ }
+
+ greeter(()=> {}, 'hello')
+ console.log(summedPrice)
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -54,6 +59,14 @@ const cart = [
 */
 
 //CODE HERE
+
+// Redo below 
+
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal * (1 + tax)) - couponValue
+}
+
+console.log(calcFinalPrice(10, 2 , .25))
 
 
 
@@ -78,7 +91,16 @@ const cart = [
 */
 
 /*
-    TEXT ANSWER HERE
+// Redo below
+
+name string
+address string
+phone number string
+notes string
+allergies array
+hasCreditCard boolean
+regularCustomer boolean
+discount array
 
 */
 
@@ -88,3 +110,14 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    name: 'Allen mounivong',
+    address: 'My house',
+    phone: '81635353',
+    notes: 'I suck at coding ',
+    allergies: ['gluten'],
+    hasCreditCard: true,
+    regularCustomer: true,
+    discounts: ['military', 'old people']
+}
