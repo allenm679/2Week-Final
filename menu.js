@@ -1,4 +1,4 @@
-///////////////////////////////////////////////
+    ///////////////////////////////////////////////
 ///////////////////MENU.JS/////////////////////
 ///////////////////////////////////////////////
 /*
@@ -68,6 +68,9 @@ console.log(pizza.popularity)
 console.log(pizza.tags)
 console.log(pizza['tags'])
 
+//Redo
+console.log(pizza.tags[1])
+
 
 /*
     Third, destructure the price off of the
@@ -93,6 +96,10 @@ console.log(pizza.price)
 
 pizza['category'] = 'appetizer'
 
+// redo
+const {category} = pizza
+console.log(category)
+
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -108,10 +115,51 @@ pizza['category'] = 'appetizer'
 
 //CODE HERE
 
-let foodArr = ['veggie', 'pep', 'sausage','pineapple','sardines' ]
+// redo 
+let foodArr = [{
+    name: 'hawaiian ',     
+    price: 10.99,
+    category: 'entree'
+    popularity: 10,
+    rating: 10,
+    tags: ['underrated', 'overhated', 'pineapple belons on pizza']
+},
+
+{
+    name: 'chicken bbq',
+    price: 20.11,
+    category:'entree',
+    popularity: 1,
+    rating: 1,
+    tags: ['yummy', 'weird' , 'sometimes underrated']
+
+},
+
+{    name: 'cheese'
+    price: 1000.01,
+    category: 'entree',
+    popularity: 0,
+    rating: 0,
+    tags: ['disgusting', 'yucky' , 'worst pizza']
+
+},
+{
+    name: 'Pepporoni',
+    price: 1.99,
+    category: 'entree',
+    popularity: 5,
+    rating: 5,
+    tags: ['average', 'yummy', 'value' ]
+},
+{    name: 'Meat lovers',
+    price: 5.99,
+    category: 'entree',
+    popularity: 10,
+    rating: 10,
+    tags: ['yummy', 'underrated', 'vegans despise']
 
 
-
+}]
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -132,6 +180,13 @@ let foodArr = ['veggie', 'pep', 'sausage','pineapple','sardines' ]
 
 //  const filteredFood = foodArr.filter()
 
+// Redo below
+
+const filteredFood = foodArr.filter(pizzaObj=>{
+    return pizzaObj.tags.includes('poltury')
+})
+
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -175,6 +230,19 @@ let foodArr = ['veggie', 'pep', 'sausage','pineapple','sardines' ]
 
 //CODE HERE
 
+//Redo alone
+const filterByProperty = (property, number, type) => {
+    const filteredArr = foodArr.filter(pizza => {
+        if(type === 'above'){
+            return pizza[property] > number        
+        } else if(type = 'below') {
+            return pizza[property] < number
+        } else {
+            return 'you did not pass a valid type'
+        }
+    })
+    return filteredArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -184,3 +252,7 @@ let foodArr = ['veggie', 'pep', 'sausage','pineapple','sardines' ]
 */
 
 //CODE HERE
+
+//Redo below
+
+console.log(filterByProperty(price, 6, 'above'))
